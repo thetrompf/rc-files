@@ -38,6 +38,9 @@ fi
 if [[ $system == 'OSX' ]]; then
 	source $rcfiles/zsh/rc.osx.zsh
 fi
+if [[ $system == 'BSD' ]]; then
+	. $rcfiles/zsh/rc.osx.zsh
+fi
 
 source $rcfiles/aliases
 source $rcfiles/tools
