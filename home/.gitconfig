@@ -1,0 +1,44 @@
+[user]
+    name = Brian K. Christensen
+    email = bkc@secoya.dk
+
+[color]
+    branch = auto
+    interactive = auto
+    diff = auto
+    status = auto
+
+[alias]
+    status = status -sb
+    fixup = !sh -c 'git commit -m \"fixup! $(git log -1 --format='\\''%s'\\'' $@)\"' -
+    squash = !sh -c 'git commit -m \"squash! $(git log -1 --format='\\''%s'\\'' $@)\"' -
+    ready = rebase --interactive --autosquash @{u}
+    ri = rebase --interactive --autosquash
+    puff = pull --ff-only
+    purr = pull --rebase
+    la = !git config -l | grep alias | cut -c 7-
+
+[format]
+    pretty = format:%C(yellow)%h %Cblue%ad %Cgreen%aN%Cred%d %Creset%s ; Some pretty colors and short commit hashes
+
+[log]
+    date = relative ; This causes the date in the log output to be displayed as "3 hours ago" etc.
+[push]
+    default = tracking
+
+[core]
+    excludesfile = ~/.gitignore-global
+    autocrlf = input
+    ;editor = sublime_text --wait
+
+;[merge]
+    ; Merging is a bit tedious to do by hand, git has builtin aliases for various mergetools.
+    ;tool = p4merge ; Most of the time you do not need the backup and mergefiles to persist after a merge.
+;[mergetool]
+    ;keepTemporaries = false
+    ;keepOriginals = false
+    ;keepBackup = false
+    ;prompt = false
+
+[mailmap]
+    file = /home/bkc/.mailmap
