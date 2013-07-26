@@ -17,6 +17,9 @@
     puff = pull --ff-only
     purr = pull --rebase
     la = !git config -l | grep alias | cut -c 7-
+    diffc = diff --cached
+    sur = submodule update --recursive
+    suri = submodule update --recursive --init
 
 [format]
     pretty = format:%C(yellow)%h %Cblue%ad %Cgreen%aN%Cred%d %Creset%s ; Some pretty colors and short commit hashes
