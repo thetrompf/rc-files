@@ -3,6 +3,10 @@ rcfiles=$HOME/.homesick/repos/rc-files
 
 system=`$rcfiles/system`
 
+if [ -f ~/.custom ]; then
+	source ~/.custom
+fi
+
 if [ -f ~/.localenv ]; then
 	source ~/.localenv
 fi

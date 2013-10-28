@@ -3,12 +3,16 @@ rcfiles=$HOME/.homesick/repos/rc-files
 
 system=`$rcfiles/system`
 
+if [ -f ~/.custom ]; then
+	source ~/.custom
+fi
+
 if [ -f ~/.localenv ]; then
 	source ~/.localenv
 fi
 
 # Check if castles need refreshing
-$HOME/.homesick/repos/homeshick/home/.homeshick --quiet refresh 14
+$HOME/.homesick/repos/homeshick/home/.homeshick --quiet refresh 14 $HOMESHICK_REFRESH_REPOS
 
 omz_dir=$HOME/.homesick/repos/oh-my-zsh
 if [[ -e $omz_dir/oh-my-zsh.sh ]] then
@@ -16,9 +20,9 @@ if [[ -e $omz_dir/oh-my-zsh.sh ]] then
 	# Let homeshick handle the updating
 	DISABLE_AUTO_UPDATE="true"
 	if [[ -z "$ZSH_THEME" ]] then
-		export ZSH_THEME="jreese"
+		ZSH_THEME="jreese"
 	fi
-	plugins+=(ant cake coffee extract history-substring-search npm pip)
+	plugins+=(ant cake coffee extract history-substring-search pip colored-man)
 	if [[ $system == 'Linux' ]]; then
 		plugins+=()
 	fi

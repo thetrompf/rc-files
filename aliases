@@ -3,6 +3,7 @@ alias status='git status -s'
 alias commit='git commit'
 alias push='git push'
 alias pull='git pull'
+alias pullr='git pull --recurse-submodules'
 alias unstage='git reset HEAD'
 
 alias grep='grep -Hn'
@@ -14,4 +15,4 @@ alias mis='cat'
 alias canhaz='sudo apt-get install'
 
 alias a2r='sudo /etc/init.d/apache2 reload'
-alias homeshick="$HOME/.homesick/repos/homeshick/home/.homeshick"
+alias homeshick="source $HOME/.homesick/repos/homeshick/bin/homeshick.sh"
