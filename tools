@@ -43,3 +43,10 @@ function ghblame {
 	remote_dir=$(echo $remote_url | sed "s/git@github.com://")
 	open "https://github.com/$remote_dir/blame/$branch$rel_path"
 }
+
+function tmux-workspace {
+	local dir=$PWD;
+	cd ${1:-${dir}};
+	tmux new-session \; split-window -h \; select-pane -L \; split-window \; attach
+	cd $dir;
+}
