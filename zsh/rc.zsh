@@ -56,8 +56,8 @@ fi
 source $rcfiles/aliases
 source $rcfiles/tools
 
-if [[ -f ~/.dir_colors && ( -x /usr/local/bin/dircolors || -x /usr/bin/dircolors ) ]]; then
-    eval `dircolors ~/.dir_colors`
+if [[ -f $HOME/.dircolors && ( -x /usr/local/bin/dircolors || -x /usr/bin/dircolors ) ]]; then
+    eval `dircolors $HOME/.dircolors`
 fi
 
 if [[ -e ~/.ssh/ssh_auth_sock ]] then
