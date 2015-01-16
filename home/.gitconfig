@@ -17,7 +17,7 @@
     puff = pull --ff-only
     purr = pull --rebase
     la = !git config -l | grep alias | cut -c 7-
-    diffc = diff --cached
+    ds = diff --staged
     sur = submodule update --recursive
     suri = submodule update --recursive --init
 
