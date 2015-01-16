@@ -20,6 +20,8 @@
     ds = diff --staged
     sur = submodule update --recursive
     suri = submodule update --recursive --init
+    lm = log --decorate=short --pretty=format:'%C(yellow)%h %Cblue%ad %Cgreen%aN%Cred%d %Creset%s' --merges
+    lg = log --decorate=short --pretty=format:'%C(yellow)%h %Cblue%ad %Cgreen%aN%Cred%d %Creset%s' --graph
 
 [format]
     pretty = format:%C(yellow)%h %Cblue%ad %Cgreen%aN%Cred%d %Creset%s ; Some pretty colors and short commit hashes
