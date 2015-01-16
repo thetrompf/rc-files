@@ -49,6 +49,10 @@ if [[ $system == 'BSD' ]]; then
 	. $rcfiles/zsh/rc.osx.zsh
 fi
 
+if [[ -n $production_server ]]; then
+	PROMPT='%{$fg[$NCOLOR]%}%n%{$fg[green]%}@%{$fg[red]%}%m%{$reset_color%} %~ $(git_prompt_info)%{$fg[red]%}%(!.#.»)%{$reset_color%} '
+fi
+
 source $rcfiles/aliases
 source $rcfiles/tools
 
